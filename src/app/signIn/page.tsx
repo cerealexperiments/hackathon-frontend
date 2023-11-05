@@ -2,6 +2,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import ky from "ky";
+import mascot from "../../../public/mascot.gif"
+import Image from "next/image";
 
 const authenticateUser = async (payload: {
   email: string;
@@ -23,6 +25,7 @@ export default function SignInPage() {
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+        <Image className="absolute w-48 right-0 bottom-0" alt="mascot gif" src={mascot} />
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
             Войдите в свой аккаунт
