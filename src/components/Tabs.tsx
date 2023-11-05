@@ -3,7 +3,6 @@ const tabs = [
   { name: "Доходы", href: "#", current: true },
   { name: "Расходы", href: "#", current: false },
   { name: "Прибыль", href: "#", current: false },
-  { name: "Фонд развития", href: "#", current: false },
 ];
 
 function classNames(...classes: string[]) {

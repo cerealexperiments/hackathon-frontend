@@ -16,14 +16,7 @@ import logo from "../../../public/logo.png";
 const navigation = [
   { name: "Главная панель", href: "#", icon: HomeIcon, current: true },
   { name: "Аналитика", href: "#", icon: ChartPieIcon, current: false },
-  { name: "Мой склад", href: "#", icon: FolderIcon, current: false },
   { name: "Отчеты", href: "#", icon: CalendarIcon, current: false },
-  {
-    name: "Cчета-фактуры",
-    href: "#",
-    icon: DocumentDuplicateIcon,
-    current: false,
-  },
   {
     name: "База знаний",
     href: "#",
@@ -32,9 +25,9 @@ const navigation = [
   },
 ];
 const teams = [
-  { id: 1, name: "История", href: "#", initial: "H", current: false },
-  { id: 2, name: "Настройки", href: "#", initial: "T", current: false },
-  { id: 3, name: "Выйти", href: "#", initial: "W", current: false },
+  { id: 1, name: "История", href: "#", initial: "И", current: false },
+  { id: 2, name: "Настройки", href: "#", initial: "Н", current: false },
+  { id: 3, name: "Выйти", href: "#", initial: "В", current: false },
 ];
 
 function classNames(...classes: string[]) {

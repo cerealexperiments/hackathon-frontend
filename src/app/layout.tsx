@@ -7,8 +7,8 @@ import Providers from "@/utils/providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "BED System",
-  description: "Сервис бухгалтерского отчета",
+  title: "Open Tender",
+  description: "Сервис для вовлечения граждан в госзакупки",
 };
 
 export default function RootLayout({

@@ -27,8 +27,11 @@ export default function Hero() {
         <div className="mx-auto max-w-2xl py-24 sm:py-36 lg:py-48">
           <div className="text-center">
             <h1 className="text-4xl text-white font-bold tracking-tight sm:text-6xl px-8">
-              <Balance>Involvement - some text</Balance>
+              <Balance>Open Tender</Balance>
             </h1>
+            <p className="mt-6 text-lg leading-8 text-medium text-gray-200">
+              Традиции встречают будущее в госзакупках
+            </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link
                 href="/menu"
