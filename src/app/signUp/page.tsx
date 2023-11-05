@@ -1,4 +1,26 @@
+"use client"
+import ky from "ky";
+import {useState} from "react";
+
+const registerUser = async (payload: {
+  email: string;
+  role: string;
+  password: string;
+}) => {
+  const json = await ky
+    .post("https://ctfkg-production.up.railway.app/api/v1/auth/register", {
+      json: payload,
+    })
+    .json();
+  console.log(json);
+  return json;
+};
+
 export default function SignUpPage() {
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [role, setRole] = useState("COMPANY")
+  console.log(role)
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -11,7 +33,10 @@ export default function SignUpPage() {
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form className="space-y-6" action="#" method="POST">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
                 Email
               </label>
               <div className="mt-2">
@@ -21,22 +46,8 @@ export default function SignUpPage() {
                   type="email"
                   autoComplete="email"
                   required
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="phone" className="block text-sm font-medium leading-6 text-gray-900">
-                Телефонный номер
-              </label>
-              <div className="mt-2">
-                <input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  autoComplete="phone"
-                  required
+                  value={email}
+                  onChange={event => setEmail(event.target.value)}
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -44,7 +55,10 @@ export default function SignUpPage() {
 
             <div>
               <div className="flex items-center justify-between">
-                <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-medium leading-6 text-gray-900"
+                >
                   Пароль
                 </label>
               </div>
@@ -55,32 +69,36 @@ export default function SignUpPage() {
                   type="password"
                   autoComplete="current-password"
                   required
+                  value={password}
+                  onChange={event => setPassword(event.target.value)}
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
-            </div>
-
-            <div>
-              <div className="flex items-center justify-between">
-                <label htmlFor="confirm-password" className="block text-sm font-medium leading-6 text-gray-900">
-                  Потвердите пароль
+              <div className="mt-5">
+                <label
+                  htmlFor="location"
+                  className="block text-sm font-medium leading-6 text-gray-900"
+                >
+                  Роль
                 </label>
-              </div>
-              <div className="mt-2">
-                <input
-                  id="confirm-password"
-                  name="confirm-password"
-                  type="password"
-                  autoComplete="confirm-password"
-                  required
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
-              </div>
+                <select
+                  id="location"
+                  value={role}
+                  onChange={(event) => setRole(event.target.value)}
+                  name="location"
+                  className="mt-2 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                >
+                  <option value="COMPANY">Компания</option>
+                  <option value="SMI">СМИ</option>
+                  <option value="GOS">Гос.</option>
+                </select>
+              </div>{" "}
             </div>
 
             <div>
               <button
                 type="submit"
+                onClick={() => registerUser({email, password, role})}
                 className="flex w-full justify-center rounded-md bg-red-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Зарегистроваться
@@ -90,5 +108,5 @@ export default function SignUpPage() {
         </div>
       </div>
     </>
-  )
+  );
 }

@@ -1,7 +1,7 @@
-"use client"
-import { useState } from 'react'
-import { Dialog, Switch } from '@headlessui/react'
-import { Bars3Icon } from '@heroicons/react/20/solid'
+"use client";
+import { useState } from "react";
+import { Dialog, Switch } from "@headlessui/react";
+import { Bars3Icon } from "@heroicons/react/20/solid";
 import {
   BellIcon,
   CreditCardIcon,
@@ -9,14 +9,15 @@ import {
   FingerPrintIcon,
   UserCircleIcon,
   UsersIcon,
-} from '@heroicons/react/24/outline'
+} from "@heroicons/react/24/outline";
 
 function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function SettingsPage() {
-  const [automaticTimezoneEnabled, setAutomaticTimezoneEnabled] = useState(true)
+  const [automaticTimezoneEnabled, setAutomaticTimezoneEnabled] =
+    useState(true);
 
   return (
     <>
@@ -24,35 +25,52 @@ export default function SettingsPage() {
         <main className="px-4 sm:px-6 lg:flex-auto lg:px-0">
           <div className="mx-auto max-w-2xl space-y-16 sm:space-y-20 lg:mx-0 lg:max-w-none">
             <div>
-              <h2 className="text-base font-semibold leading-7 text-gray-900">Личный профиль</h2>
+              <h2 className="text-base font-semibold leading-7 text-gray-900">
+                Личный профиль
+              </h2>
               <p className="mt-1 text-sm leading-6 text-gray-500">
                 Информация о пользователе.
               </p>
 
               <dl className="mt-6 space-y-6 divide-y divide-gray-100 border-t border-gray-200 text-sm leading-6">
                 <div className="pt-6 sm:flex">
-                  <dt className="font-medium text-gray-900 sm:w-64 sm:flex-none sm:pr-6">ФИО</dt>
+                  <dt className="font-medium text-gray-900 sm:w-64 sm:flex-none sm:pr-6">
+                    ФИО
+                  </dt>
                   <dd className="mt-1 flex justify-between gap-x-6 sm:mt-0 sm:flex-auto">
                     <div className="text-gray-900">John Doe</div>
-                    <button type="button" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                    <button
+                      type="button"
+                      className="font-semibold text-indigo-600 hover:text-indigo-500"
+                    >
                       Обновить
                     </button>
                   </dd>
                 </div>
                 <div className="pt-6 sm:flex">
-                  <dt className="font-medium text-gray-900 sm:w-64 sm:flex-none sm:pr-6">Email</dt>
+                  <dt className="font-medium text-gray-900 sm:w-64 sm:flex-none sm:pr-6">
+                    Email
+                  </dt>
                   <dd className="mt-1 flex justify-between gap-x-6 sm:mt-0 sm:flex-auto">
                     <div className="text-gray-900">john.doe@gmail.com</div>
-                    <button type="button" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                    <button
+                      type="button"
+                      className="font-semibold text-indigo-600 hover:text-indigo-500"
+                    >
                       Обновить
                     </button>
                   </dd>
                 </div>
                 <div className="pt-6 sm:flex">
-                  <dt className="font-medium text-gray-900 sm:w-64 sm:flex-none sm:pr-6">Пароль</dt>
+                  <dt className="font-medium text-gray-900 sm:w-64 sm:flex-none sm:pr-6">
+                    Пароль
+                  </dt>
                   <dd className="mt-1 flex justify-between gap-x-6 sm:mt-0 sm:flex-auto">
                     <div className="text-gray-900">*****</div>
-                    <button type="button" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                    <button
+                      type="button"
+                      className="font-semibold text-indigo-600 hover:text-indigo-500"
+                    >
                       Обновить
                     </button>
                   </dd>
@@ -61,35 +79,52 @@ export default function SettingsPage() {
             </div>
 
             <div>
-              <h2 className="text-base font-semibold leading-7 text-gray-900">Личный профиль</h2>
+              <h2 className="text-base font-semibold leading-7 text-gray-900">
+                Личный профиль
+              </h2>
               <p className="mt-1 text-sm leading-6 text-gray-500">
                 Информация о пользователе.
               </p>
 
               <dl className="mt-6 space-y-6 divide-y divide-gray-100 border-t border-gray-200 text-sm leading-6">
                 <div className="pt-6 sm:flex">
-                  <dt className="font-medium text-gray-900 sm:w-64 sm:flex-none sm:pr-6">ФИО</dt>
+                  <dt className="font-medium text-gray-900 sm:w-64 sm:flex-none sm:pr-6">
+                    ФИО
+                  </dt>
                   <dd className="mt-1 flex justify-between gap-x-6 sm:mt-0 sm:flex-auto">
                     <div className="text-gray-900">John Doe</div>
-                    <button type="button" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                    <button
+                      type="button"
+                      className="font-semibold text-indigo-600 hover:text-indigo-500"
+                    >
                       Обновить
                     </button>
                   </dd>
                 </div>
                 <div className="pt-6 sm:flex">
-                  <dt className="font-medium text-gray-900 sm:w-64 sm:flex-none sm:pr-6">Email</dt>
+                  <dt className="font-medium text-gray-900 sm:w-64 sm:flex-none sm:pr-6">
+                    Email
+                  </dt>
                   <dd className="mt-1 flex justify-between gap-x-6 sm:mt-0 sm:flex-auto">
                     <div className="text-gray-900">john.doe@gmail.com</div>
-                    <button type="button" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                    <button
+                      type="button"
+                      className="font-semibold text-indigo-600 hover:text-indigo-500"
+                    >
                       Обновить
                     </button>
                   </dd>
                 </div>
                 <div className="pt-6 sm:flex">
-                  <dt className="font-medium text-gray-900 sm:w-64 sm:flex-none sm:pr-6">Пароль</dt>
+                  <dt className="font-medium text-gray-900 sm:w-64 sm:flex-none sm:pr-6">
+                    Пароль
+                  </dt>
                   <dd className="mt-1 flex justify-between gap-x-6 sm:mt-0 sm:flex-auto">
                     <div className="text-gray-900">*****</div>
-                    <button type="button" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                    <button
+                      type="button"
+                      className="font-semibold text-indigo-600 hover:text-indigo-500"
+                    >
                       Обновить
                     </button>
                   </dd>
@@ -98,32 +133,48 @@ export default function SettingsPage() {
             </div>
 
             <div>
-              <h2 className="text-base font-semibold leading-7 text-gray-900">Общие настройки</h2>
+              <h2 className="text-base font-semibold leading-7 text-gray-900">
+                Общие настройки
+              </h2>
               <p className="mt-1 text-sm leading-6 text-gray-500">
                 Язык, счета и т.д
               </p>
 
               <dl className="mt-6 space-y-6 divide-y divide-gray-100 border-t border-gray-200 text-sm leading-6">
                 <div className="pt-6 sm:flex">
-                  <dt className="font-medium text-gray-900 sm:w-64 sm:flex-none sm:pr-6">Language</dt>
+                  <dt className="font-medium text-gray-900 sm:w-64 sm:flex-none sm:pr-6">
+                    Language
+                  </dt>
                   <dd className="mt-1 flex justify-between gap-x-6 sm:mt-0 sm:flex-auto">
                     <div className="text-gray-900">English</div>
-                    <button type="button" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                    <button
+                      type="button"
+                      className="font-semibold text-indigo-600 hover:text-indigo-500"
+                    >
                       Update
                     </button>
                   </dd>
                 </div>
                 <div className="pt-6 sm:flex">
-                  <dt className="font-medium text-gray-900 sm:w-64 sm:flex-none sm:pr-6">Date format</dt>
+                  <dt className="font-medium text-gray-900 sm:w-64 sm:flex-none sm:pr-6">
+                    Date format
+                  </dt>
                   <dd className="mt-1 flex justify-between gap-x-6 sm:mt-0 sm:flex-auto">
                     <div className="text-gray-900">DD-MM-YYYY</div>
-                    <button type="button" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                    <button
+                      type="button"
+                      className="font-semibold text-indigo-600 hover:text-indigo-500"
+                    >
                       Update
                     </button>
                   </dd>
                 </div>
                 <Switch.Group as="div" className="flex pt-6">
-                  <Switch.Label as="dt" className="w-64 flex-none pr-6 font-medium text-gray-900" passive>
+                  <Switch.Label
+                    as="dt"
+                    className="w-64 flex-none pr-6 font-medium text-gray-900"
+                    passive
+                  >
                     Включить запасы прочности
                   </Switch.Label>
                   <dd className="flex flex-auto items-center justify-end">
@@ -131,22 +182,30 @@ export default function SettingsPage() {
                       checked={automaticTimezoneEnabled}
                       onChange={setAutomaticTimezoneEnabled}
                       className={classNames(
-                        automaticTimezoneEnabled ? 'bg-indigo-600' : 'bg-gray-200',
-                        'flex w-8 cursor-pointer rounded-full p-px ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
+                        automaticTimezoneEnabled
+                          ? "bg-indigo-600"
+                          : "bg-gray-200",
+                        "flex w-8 cursor-pointer rounded-full p-px ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600",
                       )}
                     >
                       <span
                         aria-hidden="true"
                         className={classNames(
-                          automaticTimezoneEnabled ? 'translate-x-3.5' : 'translate-x-0',
-                          'h-4 w-4 transform rounded-full bg-white shadow-sm ring-1 ring-gray-900/5 transition duration-200 ease-in-out'
+                          automaticTimezoneEnabled
+                            ? "translate-x-3.5"
+                            : "translate-x-0",
+                          "h-4 w-4 transform rounded-full bg-white shadow-sm ring-1 ring-gray-900/5 transition duration-200 ease-in-out",
                         )}
                       />
                     </Switch>
                   </dd>
                 </Switch.Group>
                 <Switch.Group as="div" className="flex pt-6">
-                  <Switch.Label as="dt" className="w-64 flex-none pr-6 font-medium text-gray-900" passive>
+                  <Switch.Label
+                    as="dt"
+                    className="w-64 flex-none pr-6 font-medium text-gray-900"
+                    passive
+                  >
                     Включить фонд развития
                   </Switch.Label>
                   <dd className="flex flex-auto items-center justify-end">
@@ -154,22 +213,30 @@ export default function SettingsPage() {
                       checked={automaticTimezoneEnabled}
                       onChange={setAutomaticTimezoneEnabled}
                       className={classNames(
-                        automaticTimezoneEnabled ? 'bg-indigo-600' : 'bg-gray-200',
-                        'flex w-8 cursor-pointer rounded-full p-px ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
+                        automaticTimezoneEnabled
+                          ? "bg-indigo-600"
+                          : "bg-gray-200",
+                        "flex w-8 cursor-pointer rounded-full p-px ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600",
                       )}
                     >
                       <span
                         aria-hidden="true"
                         className={classNames(
-                          automaticTimezoneEnabled ? 'translate-x-3.5' : 'translate-x-0',
-                          'h-4 w-4 transform rounded-full bg-white shadow-sm ring-1 ring-gray-900/5 transition duration-200 ease-in-out'
+                          automaticTimezoneEnabled
+                            ? "translate-x-3.5"
+                            : "translate-x-0",
+                          "h-4 w-4 transform rounded-full bg-white shadow-sm ring-1 ring-gray-900/5 transition duration-200 ease-in-out",
                         )}
                       />
                     </Switch>
                   </dd>
                 </Switch.Group>
                 <Switch.Group as="div" className="flex pt-6">
-                  <Switch.Label as="dt" className="w-64 flex-none pr-6 font-medium text-gray-900" passive>
+                  <Switch.Label
+                    as="dt"
+                    className="w-64 flex-none pr-6 font-medium text-gray-900"
+                    passive
+                  >
                     Включить фонд развития
                   </Switch.Label>
                   <dd className="flex flex-auto items-center justify-end">
@@ -177,15 +244,19 @@ export default function SettingsPage() {
                       checked={automaticTimezoneEnabled}
                       onChange={setAutomaticTimezoneEnabled}
                       className={classNames(
-                        automaticTimezoneEnabled ? 'bg-indigo-600' : 'bg-gray-200',
-                        'flex w-8 cursor-pointer rounded-full p-px ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
+                        automaticTimezoneEnabled
+                          ? "bg-indigo-600"
+                          : "bg-gray-200",
+                        "flex w-8 cursor-pointer rounded-full p-px ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600",
                       )}
                     >
                       <span
                         aria-hidden="true"
                         className={classNames(
-                          automaticTimezoneEnabled ? 'translate-x-3.5' : 'translate-x-0',
-                          'h-4 w-4 transform rounded-full bg-white shadow-sm ring-1 ring-gray-900/5 transition duration-200 ease-in-out'
+                          automaticTimezoneEnabled
+                            ? "translate-x-3.5"
+                            : "translate-x-0",
+                          "h-4 w-4 transform rounded-full bg-white shadow-sm ring-1 ring-gray-900/5 transition duration-200 ease-in-out",
                         )}
                       />
                     </Switch>
@@ -197,5 +268,5 @@ export default function SettingsPage() {
         </main>
       </div>
     </>
-  )
+  );
 }

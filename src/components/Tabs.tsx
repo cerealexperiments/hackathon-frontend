@@ -1,13 +1,13 @@
-"use client"
+"use client";
 const tabs = [
-  { name: 'Доходы', href: '#', current: true },
-  { name: 'Расходы', href: '#', current: false },
-  { name: 'Прибыль', href: '#', current: false },
-  { name: 'Фонд развития', href: '#', current: false },
-]
+  { name: "Доходы", href: "#", current: true },
+  { name: "Расходы", href: "#", current: false },
+  { name: "Прибыль", href: "#", current: false },
+  { name: "Фонд развития", href: "#", current: false },
+];
 
 function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function Tabs() {
@@ -39,11 +39,11 @@ export default function Tabs() {
                 href={tab.href}
                 className={classNames(
                   tab.current
-                    ? 'border-indigo-500 text-indigo-600'
-                    : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700',
-                  'whitespace-nowrap border-b-2 py-4 px-1 text-sm font-medium'
+                    ? "border-indigo-500 text-indigo-600"
+                    : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700",
+                  "whitespace-nowrap border-b-2 py-4 px-1 text-sm font-medium",
                 )}
-                aria-current={tab.current ? 'page' : undefined}
+                aria-current={tab.current ? "page" : undefined}
               >
                 {tab.name}
               </a>
@@ -52,5 +52,5 @@ export default function Tabs() {
         </div>
       </div>
     </div>
-  )
+  );
 }

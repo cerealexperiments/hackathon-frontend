@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Balance from "react-wrap-balancer";
 import Image from "next/image";
-import heroImage from "../../public/hero.png"
+import heroImage from "../../public/hero.png";
 
 export default function Hero() {
   return (

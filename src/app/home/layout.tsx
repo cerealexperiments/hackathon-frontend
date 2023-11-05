@@ -1,6 +1,6 @@
-"use client"
-import { Fragment, useState } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
+"use client";
+import { Fragment, useState } from "react";
+import { Dialog, Transition } from "@headlessui/react";
 import {
   Bars3Icon,
   CalendarIcon,
@@ -9,36 +9,54 @@ import {
   FolderIcon,
   HomeIcon,
   XMarkIcon,
-} from '@heroicons/react/24/outline'
-import Image from 'next/image'
-import logo from "../../../public/logo.png"
+} from "@heroicons/react/24/outline";
+import Image from "next/image";
+import logo from "../../../public/logo.png";
 
 const navigation = [
-  { name: 'Главная панель', href: '#', icon: HomeIcon, current: true },
-  { name: 'Аналитика', href: '#', icon: ChartPieIcon, current: false },
-  { name: 'Мой склад', href: '#', icon: FolderIcon, current: false },
-  { name: 'Отчеты', href: '#', icon: CalendarIcon, current: false },
-  { name: 'Cчета-фактуры', href: '#', icon: DocumentDuplicateIcon, current: false },
-  { name: 'База знаний', href: '#', icon: DocumentDuplicateIcon, current: false },
-]
+  { name: "Главная панель", href: "#", icon: HomeIcon, current: true },
+  { name: "Аналитика", href: "#", icon: ChartPieIcon, current: false },
+  { name: "Мой склад", href: "#", icon: FolderIcon, current: false },
+  { name: "Отчеты", href: "#", icon: CalendarIcon, current: false },
+  {
+    name: "Cчета-фактуры",
+    href: "#",
+    icon: DocumentDuplicateIcon,
+    current: false,
+  },
+  {
+    name: "База знаний",
+    href: "#",
+    icon: DocumentDuplicateIcon,
+    current: false,
+  },
+];
 const teams = [
-  { id: 1, name: 'История', href: '#', initial: 'H', current: false },
-  { id: 2, name: 'Настройки', href: '#', initial: 'T', current: false },
-  { id: 3, name: 'Выйти', href: '#', initial: 'W', current: false },
-]
+  { id: 1, name: "История", href: "#", initial: "H", current: false },
+  { id: 2, name: "Настройки", href: "#", initial: "T", current: false },
+  { id: 3, name: "Выйти", href: "#", initial: "W", current: false },
+];
 
 function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
-export default function HomeLayout({children}: {children: React.ReactNode}) {
-  const [sidebarOpen, setSidebarOpen] = useState(false)
+export default function HomeLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
     <>
       <div>
         <Transition.Root show={sidebarOpen} as={Fragment}>
-          <Dialog as="div" className="relative z-50 lg:hidden" onClose={setSidebarOpen}>
+          <Dialog
+            as="div"
+            className="relative z-50 lg:hidden"
+            onClose={setSidebarOpen}
+          >
             <Transition.Child
               as={Fragment}
               enter="transition-opacity ease-linear duration-300"
@@ -72,9 +90,16 @@ export default function HomeLayout({children}: {children: React.ReactNode}) {
                     leaveTo="opacity-0"
                   >
                     <div className="absolute left-full top-0 flex w-16 justify-center pt-5">
-                      <button type="button" className="-m-2.5 p-2.5" onClick={() => setSidebarOpen(false)}>
+                      <button
+                        type="button"
+                        className="-m-2.5 p-2.5"
+                        onClick={() => setSidebarOpen(false)}
+                      >
                         <span className="sr-only">Close sidebar</span>
-                        <XMarkIcon className="h-6 w-6 text-white" aria-hidden="true" />
+                        <XMarkIcon
+                          className="h-6 w-6 text-white"
+                          aria-hidden="true"
+                        />
                       </button>
                     </div>
                   </Transition.Child>
@@ -97,15 +122,17 @@ export default function HomeLayout({children}: {children: React.ReactNode}) {
                                   href={item.href}
                                   className={classNames(
                                     item.current
-                                      ? 'bg-gray-50 text-indigo-600'
-                                      : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50',
-                                    'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
+                                      ? "bg-gray-50 text-indigo-600"
+                                      : "text-gray-700 hover:text-indigo-600 hover:bg-gray-50",
+                                    "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold",
                                   )}
                                 >
                                   <item.icon
                                     className={classNames(
-                                      item.current ? 'text-indigo-600' : 'text-gray-400 group-hover:text-indigo-600',
-                                      'h-6 w-6 shrink-0'
+                                      item.current
+                                        ? "text-indigo-600"
+                                        : "text-gray-400 group-hover:text-indigo-600",
+                                      "h-6 w-6 shrink-0",
                                     )}
                                     aria-hidden="true"
                                   />
@@ -116,7 +143,9 @@ export default function HomeLayout({children}: {children: React.ReactNode}) {
                           </ul>
                         </li>
                         <li>
-                          <div className="text-xs font-semibold leading-6 text-gray-400">Your teams</div>
+                          <div className="text-xs font-semibold leading-6 text-gray-400">
+                            Your teams
+                          </div>
                           <ul role="list" className="-mx-2 mt-2 space-y-1">
                             {teams.map((team) => (
                               <li key={team.name}>
@@ -124,17 +153,17 @@ export default function HomeLayout({children}: {children: React.ReactNode}) {
                                   href={team.href}
                                   className={classNames(
                                     team.current
-                                      ? 'bg-gray-50 text-indigo-600'
-                                      : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50',
-                                    'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
+                                      ? "bg-gray-50 text-indigo-600"
+                                      : "text-gray-700 hover:text-indigo-600 hover:bg-gray-50",
+                                    "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold",
                                   )}
                                 >
                                   <span
                                     className={classNames(
                                       team.current
-                                        ? 'text-indigo-600 border-indigo-600'
-                                        : 'text-gray-400 border-gray-200 group-hover:border-indigo-600 group-hover:text-indigo-600',
-                                      'flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border text-[0.625rem] font-medium bg-white'
+                                        ? "text-indigo-600 border-indigo-600"
+                                        : "text-gray-400 border-gray-200 group-hover:border-indigo-600 group-hover:text-indigo-600",
+                                      "flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border text-[0.625rem] font-medium bg-white",
                                     )}
                                   >
                                     {team.initial}
@@ -159,11 +188,7 @@ export default function HomeLayout({children}: {children: React.ReactNode}) {
           {/* Sidebar component, swap this element with another sidebar if you like */}
           <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6">
             <div className="flex h-16 pt-4 shrink-0 items-center">
-              <Image
-                className="h-12 w-auto"
-                src={logo}
-                alt="Your Company"
-              />
+              <Image className="h-12 w-auto" src={logo} alt="Your Company" />
             </div>
             <nav className="flex flex-1 flex-col">
               <ul role="list" className="flex flex-1 flex-col gap-y-7">
@@ -175,15 +200,17 @@ export default function HomeLayout({children}: {children: React.ReactNode}) {
                           href={item.href}
                           className={classNames(
                             item.current
-                              ? 'bg-gray-50 text-indigo-600'
-                              : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50',
-                            'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
+                              ? "bg-gray-50 text-indigo-600"
+                              : "text-gray-700 hover:text-indigo-600 hover:bg-gray-50",
+                            "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold",
                           )}
                         >
                           <item.icon
                             className={classNames(
-                              item.current ? 'text-indigo-600' : 'text-gray-400 group-hover:text-indigo-600',
-                              'h-6 w-6 shrink-0'
+                              item.current
+                                ? "text-indigo-600"
+                                : "text-gray-400 group-hover:text-indigo-600",
+                              "h-6 w-6 shrink-0",
                             )}
                             aria-hidden="true"
                           />
@@ -194,7 +221,9 @@ export default function HomeLayout({children}: {children: React.ReactNode}) {
                   </ul>
                 </li>
                 <li>
-                  <div className="text-xs font-semibold leading-6 text-gray-400">Your teams</div>
+                  <div className="text-xs font-semibold leading-6 text-gray-400">
+                    Your teams
+                  </div>
                   <ul role="list" className="-mx-2 mt-2 space-y-1">
                     {teams.map((team) => (
                       <li key={team.name}>
@@ -202,17 +231,17 @@ export default function HomeLayout({children}: {children: React.ReactNode}) {
                           href={team.href}
                           className={classNames(
                             team.current
-                              ? 'bg-gray-50 text-indigo-600'
-                              : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50',
-                            'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
+                              ? "bg-gray-50 text-indigo-600"
+                              : "text-gray-700 hover:text-indigo-600 hover:bg-gray-50",
+                            "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold",
                           )}
                         >
                           <span
                             className={classNames(
                               team.current
-                                ? 'text-indigo-600 border-indigo-600'
-                                : 'text-gray-400 border-gray-200 group-hover:border-indigo-600 group-hover:text-indigo-600',
-                              'flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border text-[0.625rem] font-medium bg-white'
+                                ? "text-indigo-600 border-indigo-600"
+                                : "text-gray-400 border-gray-200 group-hover:border-indigo-600 group-hover:text-indigo-600",
+                              "flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border text-[0.625rem] font-medium bg-white",
                             )}
                           >
                             {team.initial}
@@ -243,11 +272,17 @@ export default function HomeLayout({children}: {children: React.ReactNode}) {
         </div>
 
         <div className="sticky top-0 z-40 flex items-center gap-x-6 bg-white px-4 py-4 shadow-sm sm:px-6 lg:hidden">
-          <button type="button" className="-m-2.5 p-2.5 text-gray-700 lg:hidden" onClick={() => setSidebarOpen(true)}>
+          <button
+            type="button"
+            className="-m-2.5 p-2.5 text-gray-700 lg:hidden"
+            onClick={() => setSidebarOpen(true)}
+          >
             <span className="sr-only">Open sidebar</span>
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
-          <div className="flex-1 text-sm font-semibold leading-6 text-gray-900">Главная панель</div>
+          <div className="flex-1 text-sm font-semibold leading-6 text-gray-900">
+            Главная панель
+          </div>
           <a href="#">
             <span className="sr-only">Your profile</span>
             <img
@@ -263,5 +298,5 @@ export default function HomeLayout({children}: {children: React.ReactNode}) {
         </main>
       </div>
     </>
-  )
+  );
 }

@@ -1,14 +1,14 @@
-import Header from "@/components/Header"
+import Header from "@/components/Header";
 
 export default function LandingLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <div>
-      <Header/>
+      <Header />
       {children}
     </div>
-  )
+  );
 }
